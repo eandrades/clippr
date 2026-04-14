@@ -6,13 +6,13 @@ import { createClient } from '@/lib/supabase/client'
 
 const NAV = [
   { href: '/admin', label: 'Dashboard', icon: '▤' },
-  { href: '/admin/reservas', label: 'Reservas', icon: '📅' },
+  { href: '/admin/calendario', label: 'Calendario', icon: '📅' },
+  { href: '/admin/reservas', label: 'Reservas', icon: '📋' },
   { href: '/admin/clientes', label: 'Clientes', icon: '👥' },
   { href: '/admin/barberos', label: 'Equipo', icon: '✂️' },
   { href: '/admin/servicios', label: 'Servicios', icon: '💈' },
   { href: '/admin/pagos', label: 'Pagos', icon: '💳' },
   { href: '/admin/finanzas', label: 'Finanzas', icon: '📊' },
-  { href: '/admin/calendario', label: 'Calendario', icon: '��️' },
 ]
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
