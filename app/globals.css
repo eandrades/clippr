@@ -1,69 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-display: 'Syne', sans-serif;
+  --font-display: 'DM Sans', sans-serif;
   --font-body: 'DM Sans', sans-serif;
-  --brand: #1a8c65;
-  --brand-dark: #0f5540;
-  --brand-light: #d0f1e3;
+  --font-mono: 'DM Mono', monospace;
+  --brand: #16a34a;
+  --brand-dark: #15803d;
+  --brand-light: #f0fdf4;
 }
-
 * { box-sizing: border-box; }
-
-body {
-  font-family: var(--font-body);
-  background: #fafaf9;
-  color: #1a1a18;
-}
-
-h1, h2, h3, h4, h5 {
-  font-family: var(--font-display);
-}
-
-/* Smooth scrolling */
+body { font-family: var(--font-body); background: #f5f5f3; color: #111; font-weight: 400; }
+h1 { font-size: 22px; font-weight: 300; letter-spacing: -.3px; }
+h2 { font-size: 18px; font-weight: 400; }
+h3 { font-size: 15px; font-weight: 500; }
 html { scroll-behavior: smooth; }
-
-/* Custom scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #d0d0cc; border-radius: 99px; }
-
-/* Focus ring */
-*:focus-visible {
-  outline: 2px solid var(--brand);
-  outline-offset: 2px;
-}
-
-/* Utilities */
-.font-display { font-family: var(--font-display); }
-.font-body { font-family: var(--font-body); }
-
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: #ddd; border-radius: 99px; }
 @layer components {
-  .btn-primary {
-    @apply bg-brand-500 hover:bg-brand-600 text-white font-medium px-5 py-2.5 rounded-xl transition-all duration-150 text-sm;
-    font-family: var(--font-display);
-  }
-  .btn-ghost {
-    @apply border border-gray-200 hover:bg-gray-50 text-gray-700 font-medium px-5 py-2.5 rounded-xl transition-all duration-150 text-sm;
-    font-family: var(--font-display);
-  }
-  .card {
-    @apply bg-white border border-gray-100 rounded-2xl;
-  }
-  .input {
-    @apply w-full border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm bg-white focus:outline-none focus:border-brand-400 transition-colors;
-    font-family: var(--font-body);
-  }
-  .label {
-    @apply block text-xs font-medium text-gray-500 mb-1.5 uppercase tracking-wide;
-  }
-  .badge-pending   { @apply inline-flex text-xs font-medium px-2.5 py-1 rounded-full bg-amber-50 text-amber-700; }
-  .badge-confirmed { @apply inline-flex text-xs font-medium px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700; }
-  .badge-completed { @apply inline-flex text-xs font-medium px-2.5 py-1 rounded-full bg-gray-100 text-gray-600; }
-  .badge-cancelled { @apply inline-flex text-xs font-medium px-2.5 py-1 rounded-full bg-red-50 text-red-600; }
-  .badge-free      { @apply inline-flex text-xs font-medium px-2.5 py-1 rounded-full bg-gray-100 text-gray-600; }
-  .badge-pro       { @apply inline-flex text-xs font-medium px-2.5 py-1 rounded-full bg-brand-100 text-brand-700; }
-  .badge-business  { @apply inline-flex text-xs font-medium px-2.5 py-1 rounded-full bg-purple-50 text-purple-700; }
+  .btn-primary { @apply bg-gray-900 hover:bg-gray-800 text-white font-medium px-5 py-2.5 rounded-lg transition-all text-sm; }
+  .btn-ghost { @apply border border-gray-200 hover:bg-gray-50 text-gray-700 font-medium px-5 py-2.5 rounded-lg transition-all text-sm; }
+  .card { @apply bg-white border border-gray-100 rounded-xl; }
+  .input { @apply w-full border border-gray-200 rounded-lg px-3.5 py-2.5 text-sm bg-white focus:outline-none focus:border-gray-400 transition-colors; }
+  .label { @apply block text-xs font-medium text-gray-400 mb-1.5 uppercase tracking-widest; }
+  .badge-pending   { @apply inline-flex text-xs px-2.5 py-1 rounded-full bg-amber-50 text-amber-700; }
+  .badge-confirmed { @apply inline-flex text-xs px-2.5 py-1 rounded-full bg-green-50 text-green-700; }
+  .badge-completed { @apply inline-flex text-xs px-2.5 py-1 rounded-full bg-gray-100 text-gray-500; }
+  .badge-cancelled { @apply inline-flex text-xs px-2.5 py-1 rounded-full bg-red-50 text-red-600; }
+  .badge-free      { @apply inline-flex text-xs px-2.5 py-1 rounded-full bg-gray-100 text-gray-500; }
+  .badge-pro       { @apply inline-flex text-xs px-2.5 py-1 rounded-full bg-green-50 text-green-700; }
+  .badge-business  { @apply inline-flex text-xs px-2.5 py-1 rounded-full bg-purple-50 text-purple-700; }
 }
