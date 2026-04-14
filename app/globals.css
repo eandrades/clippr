@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --brand: #1a8c65;
+  --brand-dark: #0f5540;
+  --brand-light: #d0f1e3;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  background: #fafaf9;
+  color: #1a1a18;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+}
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d0d0cc; border-radius: 99px; }
+
+/* Focus ring */
+*:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* Utilities */
+.font-display { font-family: var(--font-display); }
+.font-body { font-family: var(--font-body); }
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-500 hover:bg-brand-600 text-white font-medium px-5 py-2.5 rounded-xl transition-all duration-150 text-sm;
+    font-family: var(--font-display);
+  }
+  .btn-ghost {
+    @apply border border-gray-200 hover:bg-gray-50 text-gray-700 font-medium px-5 py-2.5 rounded-xl transition-all duration-150 text-sm;
+    font-family: var(--font-display);
+  }
+  .card {
+    @apply bg-white border border-gray-100 rounded-2xl;
+  }
+  .input {
+    @apply w-full border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm bg-white focus:outline-none focus:border-brand-400 transition-colors;
+    font-family: var(--font-body);
+  }
+  .label {
+    @apply block text-xs font-medium text-gray-500 mb-1.5 uppercase tracking-wide;
+  }
+  .badge-pending   { @apply inline-flex text-xs font-medium px-2.5 py-1 rounded-full bg-amber-50 text-amber-700; }
+  .badge-confirmed { @apply inline-flex text-xs font-medium px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700; }
+  .badge-completed { @apply inline-flex text-xs font-medium px-2.5 py-1 rounded-full bg-gray-100 text-gray-600; }
+  .badge-cancelled { @apply inline-flex text-xs font-medium px-2.5 py-1 rounded-full bg-red-50 text-red-600; }
+  .badge-free      { @apply inline-flex text-xs font-medium px-2.5 py-1 rounded-full bg-gray-100 text-gray-600; }
+  .badge-pro       { @apply inline-flex text-xs font-medium px-2.5 py-1 rounded-full bg-brand-100 text-brand-700; }
+  .badge-business  { @apply inline-flex text-xs font-medium px-2.5 py-1 rounded-full bg-purple-50 text-purple-700; }
+}
