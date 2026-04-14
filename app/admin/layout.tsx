@@ -12,6 +12,7 @@ const NAV = [
   { href: '/admin/servicios', label: 'Servicios', icon: '💈' },
   { href: '/admin/pagos', label: 'Pagos', icon: '💳' },
   { href: '/admin/finanzas', label: 'Finanzas', icon: '📊' },
+  { href: '/admin/calendario', label: 'Calendario', icon: '��️' },
 ]
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
